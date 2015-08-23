@@ -36,7 +36,7 @@ gem 'devise'
 # Core of WebSocket
 gem 'faye-websocket'
 # Pry for debug
-gem 'pry'
+gem 'pry', '~> 0.10.1'
 # Hirb is for represent table layout in console
 gem 'hirb'
 
@@ -61,7 +61,7 @@ group :development, :test do
   # Timecop is for manipulate time
   gem 'timecop'
   # Pry-byebug is an extension of Pry gem
-  gem 'pry-byebug'
+  gem 'pry-byebug', '~> 3.2.0'
   # Rspec for tests
   gem 'rspec-rails'
 end
