@@ -16,6 +16,4 @@ Cat.create([
   { name: 'Lilu', image: 'http://static.boredpanda.com/blog/wp-content/uploads/2014/11/famous-cat__605.jpg' },
 ])
 
-User.create([
-  {name: 'tester@test.com', password: 'password'}
-])
+
