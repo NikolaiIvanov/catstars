@@ -1,7 +1,8 @@
-%h1 Editing cat
+.col-xs-6.col-sm-4
+  %h1 Editing cat
 
-= render 'form'
+  = render 'form'
 
-= link_to 'Show', @cat
-\|
-= link_to 'Back', cats_path
+  = link_to "Show", @cat, class: 'btn btn-primary btn-xs'
+  \|
+  = link_to 'Back', cats_path, class: 'btn btn-primary btn-xs'

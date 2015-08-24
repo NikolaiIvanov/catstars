@@ -24,7 +24,7 @@ class CatsController < ApplicationController
   # POST /cats
   # POST /cats.json
   def create
-    @cat = Cat.new(cat_params)
+    @cat = Cat.new(cat_params.merge! user_id: current_user.id)
 
     respond_to do |format|
       if @cat.save

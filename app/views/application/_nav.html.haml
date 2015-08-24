@@ -10,4 +10,12 @@
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav
         %li
-          =link_to "Cat list", cats_path
+          =link_to "Cats list", cats_path
+
+      %ul.nav.navbar-nav.navbar-right
+        -if current_user
+          %p.navbar-text
+            You are signed in as #{current_user.email}.
+            =link_to "Sign out", destroy_user_session_path, method: :delete
+        -else
+          %li=link_to "Sign in", new_user_session_path
