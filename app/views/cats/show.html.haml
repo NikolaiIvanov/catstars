@@ -1,0 +1,9 @@
+%h1= @cat.name
+
+%p
+  = image_tag @cat.image
+
+%p
+  = link_to 'Edit', edit_cat_path(@cat)
+  \|
+  = link_to 'Back', cats_path

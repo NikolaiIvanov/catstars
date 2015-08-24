@@ -1,0 +1,18 @@
+%h1 Cat Stars
+
+.row
+  %ul.list-unstyled.cat-stars
+    - @cats.each do |cat|
+      %li.col-md-3
+        %h3= link_to cat.name, cat
+        %p
+          =link_to cat do
+            =image_tag cat.image, height: 200
+        %p
+          = link_to 'Edit', edit_cat_path(cat)
+          |
+          = link_to 'Delete Cat Star', cat, :method => :delete, :data => {:confirm => "Are you sure to delete a Cat Star - #{cat.name}?"}
+
+.row
+  %p
+    = link_to 'Add some Cat Star', new_cat_path, class: "btn btn-primary"

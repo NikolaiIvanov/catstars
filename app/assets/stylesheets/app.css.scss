@@ -1,0 +1,26 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+.cat-stars {
+  li {
+    text-align: center;
+    h3 {
+      text-align: center;
+    }
+    a {
+      img {
+        border-radius: 50%;
+        display: block;
+        height: 100%;
+        max-width: 263px;
+        min-height: 263px;
+        overflow: hidden;
+        width: 100%;
+        transition: border 0.25s ease;
+        &:hover {
+          border:15px solid #286090;
+        }
+      }
+    }
+  }
+}
