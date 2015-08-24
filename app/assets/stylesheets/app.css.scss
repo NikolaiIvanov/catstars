@@ -32,3 +32,62 @@ h1, h2, h3, h4, h5 {
   font-family: "Helvetica Neue"!important;
   font-weight: normal;
 }
+
+
+
+.blur-background:before {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: -1;
+
+  display: block;
+  background-image: url('/assets/bg.jpg');
+  width: 100%;
+  height: 100%;
+  background-position-x: center;
+//  background-position-y: center;
+
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -o-filter: blur(3px);
+  -ms-filter: blur(3px);
+  filter: blur(3px);
+}
+
+.row-centered {
+  text-align:center;
+}
+.col-centered {
+  display:inline-block;
+  float:none;
+  text-align:left;
+  margin-right:-4px;
+}
+.col-fixed {
+  width:320px;
+}
+.col-min {
+  min-width:320px;
+}
+.col-max {
+  max-width:320px;
+}
+
+[class*="col-"] {
+  vertical-align: top;
+}
+
+
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one*/
+
+  display: flex;
+  align-items: center;
+  .panel .panel-heading {
+    margin-bottom: 0;
+  }
+}
