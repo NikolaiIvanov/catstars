@@ -25,6 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Haml is for handling erb files
 gem 'haml-rails'
+gem 'slim'
 
 # Support for building a bootstrap app's
 gem 'bootstrap-sass'

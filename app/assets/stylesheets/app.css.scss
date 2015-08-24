@@ -16,11 +16,19 @@
         min-height: 263px;
         overflow: hidden;
         width: 100%;
-        transition: border 0.25s ease;
+        transition: all 0.25s ease;
+        -webkit-transform: translate3d(0, 0, 0);
+
         &:hover {
           border:15px solid #286090;
+          box-shadow: 0 0 16px;
         }
       }
     }
   }
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "Helvetica Neue"!important;
+  font-weight: normal;
 }

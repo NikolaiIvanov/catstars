@@ -9,8 +9,13 @@
 <body>
   <%= render "nav" %>
   <div class="container">
-    <%= content_tag :div, alert, class: "alert alert-danger" if alert %>
-    <%= content_tag :div, notice, class: "alert alert-success" if notice %>
+    <div class="row">
+      <div class="col-xs-6 col-sm-4">
+        <%= render 'flash_messages' if !flash.empty? %>
+        <%#= content_tag :div, alert, class: "alert alert-danger" if alert %>
+        <%#= content_tag :div, notice, class: "alert alert-success" if notice %>
+      </div>
+    </div>
     <%= yield %>
   </div>
 </body>
