@@ -18,4 +18,3 @@ Cat.create([
 User.create([
   { email: "tester@example.com", password: "password", password_confirmation: "password", name: "tester" }
 ])
-Rails.logger.debug 'DATA SEED SUCCESSFUL'

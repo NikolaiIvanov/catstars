@@ -16,7 +16,8 @@
         %ul.nav.navbar-nav.navbar-right
           -if current_user
             %p.navbar-text
-              You are signed in as #{current_user.email}.
-              =link_to "Sign out", destroy_user_session_path, method: :delete
+              You are signed in as #{current_user.name.nil? ? current_user.email : current_user.name.capitalize}.
+              =link_to destroy_user_session_path, title: "Log out", data: {toggle: "tooltip", placement: "bottom"}, method: :delete do
+                %span.glyphicon.glyphicon-log-out
           -else
             %li=link_to "Sign in", new_user_session_path
