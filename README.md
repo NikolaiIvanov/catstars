@@ -12,3 +12,4 @@ rake db:migrate
 
 rake db:seed
 
+# Default user: "tester@example.com", password: "password"

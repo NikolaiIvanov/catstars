@@ -15,5 +15,7 @@ Cat.create([
   { name: 'Hamilton', image: 'http://static.boredpanda.com/blog/wp-content/uploads/2014/11/most-popular-cats-hamilton-11__605.jpg' },
   { name: 'Lilu', image: 'http://static.boredpanda.com/blog/wp-content/uploads/2014/11/famous-cat__605.jpg' },
 ])
-
-
+User.create([
+  { email: "tester@example.com", password: "password", password_confirmation: "password", name: "tester" }
+])
+Rails.logger.debug 'DATA SEED SUCCESSFUL'
