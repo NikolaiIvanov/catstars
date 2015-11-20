@@ -13,3 +13,6 @@ rake db:migrate
 rake db:seed
 
 # Default user: "tester@example.com", password: "password"
+
+# Run tests
+rake test:lib
