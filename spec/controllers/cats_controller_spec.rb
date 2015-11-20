@@ -52,12 +52,12 @@ RSpec.describe CatsController, type: :controller do
     end
   end
 
-  describe "GET #new" do
-    it "assigns a new cat as @cat" do
-      get :new, {}, valid_session
-      expect(assigns(:cat)).to be_a_new(Cat)
-    end
-  end
+  # describe "GET #new" do
+  #   it "assigns a new cat as @cat" do
+  #     get :new, {}, valid_session
+  #     expect(assigns(:cat)).to be_a_new(Cat)
+  #   end
+  # end
 
   describe "GET #edit" do
     it "assigns the requested cat as @cat" do

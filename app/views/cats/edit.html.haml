@@ -1,7 +1,8 @@
 .col-xs-6.col-sm-4
   %h1 Edit cat: #{@cat.name}
-  %p.cat-show
-    = image_tag @cat.image
+  - unless @cat.image.empty?
+    %p.cat-show
+      = image_tag @cat.image
   = render 'form'
 
   = link_to "Show", @cat, class: 'btn btn-primary btn-xs'

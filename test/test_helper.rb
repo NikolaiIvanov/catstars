@@ -17,7 +17,7 @@ class MiniTest::Test
   end
 
   def teardown
-    DatabaseCleaner.DatabaseCleaner
+    DatabaseCleaner.clean
     Timecop.return
   end
 end

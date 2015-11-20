@@ -6,11 +6,15 @@
       %li.col-md-3
         %h3= link_to cat.name, cat
         %p
-          =link_to cat do
-            =image_tag cat.image
+          - if cat.image.empty?
+            =link_to cat do
+              =image_tag('no_cat.jpg', class: "no-cat")
+          - else
+            =link_to cat do
+              =image_tag cat.image
         %p
           = link_to 'Edit', edit_cat_path(cat), class: 'btn btn-primary btn-xs'
-          |
+          •
           = link_to 'Delete Cat Star', cat, :method => :delete, :data => {:confirm => "Are you sure to delete a Cat Star - #{cat.name}?"}, class: 'btn btn-danger btn-xs'
 
 .row

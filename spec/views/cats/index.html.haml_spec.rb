@@ -16,7 +16,6 @@ RSpec.describe "cats/index", type: :view do
 
   it "renders a list of cats" do
     render
-    assert_select "tr>td", :text => "Name".to_s, :count => 2
-    assert_select "tr>td", :text => "Image".to_s, :count => 2
+    assert_select "h1", :text => "Cat Stars".to_s, :count => 1
   end
 end

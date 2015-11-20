@@ -66,4 +66,3 @@ group :development, :test do
   # Rspec for tests
   gem 'rspec-rails'
 end
-

@@ -24,6 +24,9 @@
           box-shadow: 0 0 16px;
         }
       }
+      img.no-cat {
+        max-height: 263px;
+      }
     }
   }
 }
@@ -93,7 +96,13 @@ h1, h2, h3, h4, h5 {
 }
 
 .cat-show {
+  text-align: center;
   img {
-    width:100%
+    width:100%;
+  }
+  img.no-cat {
+    text-align: center;
+    width: auto;
+    max-height:250px;
   }
 }

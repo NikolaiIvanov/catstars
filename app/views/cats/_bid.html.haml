@@ -1,0 +1,17 @@
+- if @cat.has_auction?
+  .panel.panel-default
+    .panel-heading
+      %h3.panel-title
+        Bid's
+    .panel-body
+      = form_for [@cat, @cat.auction, Bid.new] do |f|
+        .form-group
+          %p.lead
+            Current bid:
+            = @cat.auction.current_bid
+        .form-group
+          .field
+            = f.text_field :value, placeholder: "Place your bid", class: 'form-control'
+        .form-group
+          .actions
+            = f.submit 'Place bid', class: 'btn btn-primary btn-lg btn-block'
