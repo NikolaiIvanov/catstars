@@ -61,6 +61,16 @@ class CatsController < ApplicationController
     end
   end
 
+  def transfer
+    cat = Cat.find params[:id]
+    if cat.auction.ended?
+      cat.update_attribute :user_id, cat.auction.top_bid.user_id
+      redirect_to cat, notice: "Now this cat is yours."
+    else
+      redirect_to cat_path, alert: "The auction is not ended yet."
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cat

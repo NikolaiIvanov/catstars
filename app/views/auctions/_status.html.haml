@@ -1,0 +1,22 @@
+- if @cat.auction.top_bid.user_id == current_user.id && @cat.user_id != current_user.id
+  .panel.panel-default
+    .panel-heading
+      %h3.panel-title
+        You won the auction!
+    .panel-body
+      .form-group
+        .actions
+          = link_to "Claim this cat", transfer_cat_path(@cat), class: 'btn btn-primary btn-lg btn-block', method: :put
+- elsif @cat.user_id == current_user.id
+  .panel.panel-default
+    .panel-heading
+      %h3.panel-title
+        You won the auction!
+    .panel-body
+      .form-group
+        .actions
+          %p.lead
+            You already claimed this cat!
+- else
+  %p.lead
+    You lost the auction.

@@ -40,6 +40,8 @@ gem 'faye-websocket'
 gem 'pry', '~> 0.10.1'
 # Hirb is for represent table layout in console
 gem 'hirb'
+# Validate URL
+gem 'validate_url'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

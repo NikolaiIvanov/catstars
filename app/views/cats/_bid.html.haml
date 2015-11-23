@@ -1,17 +1,28 @@
 - if @cat.has_auction?
-  .panel.panel-default
-    .panel-heading
-      %h3.panel-title
-        Bid's
-    .panel-body
-      = form_for [@cat, @cat.auction, Bid.new] do |f|
-        .form-group
-          %p.lead
-            Current bid:
-            = @cat.auction.current_bid
-        .form-group
-          .field
-            = f.text_field :value, placeholder: "Place your bid", class: 'form-control'
-        .form-group
-          .actions
-            = f.submit 'Place bid', class: 'btn btn-primary btn-lg btn-block'
+  - if @cat.auction.ended?
+    = render "auctions/status"
+  - else
+    .panel.panel-default
+      .panel-heading
+        %h3.panel-title
+          Bid's
+      .panel-body
+        = form_for [@cat, @cat.auction, Bid.new] do |f|
+          - unless @cat.auction.ends_at.nil?
+            .form-group
+              %p.lead
+                Auction ends at:
+                #{l(@cat.auction.ends_at, format: :short)}
+          .form-group
+            %p.lead
+              - if @cat.auction.top_bid.user_id == current_user.id
+                Your current bid:
+              - else
+                You were outbid:
+              = @cat.auction.current_bid
+          .form-group
+            .field
+              = f.text_field :value, placeholder: "Place your bid", class: 'form-control'
+          .form-group
+            .actions
+              = f.submit 'Place bid', class: 'btn btn-primary btn-lg btn-block'
